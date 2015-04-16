@@ -23,8 +23,7 @@ module.exports = function(grunt) {
 		},
 
 		clean: {
-			main: ['app'],
-			all: ['app', '.sass-cache']
+			main: ['app']
 		},
 
 		less: {
@@ -73,12 +72,6 @@ module.exports = function(grunt) {
 				cwd: 'src/js',
 				src: ['**/*.js'],
 				dest: 'app/js'
-			},
-			lib: {
-				expand: true,
-				cwd: 'lib',
-				src: ['**'],
-				dest: 'app/lib'
 			}
 		},
 
@@ -107,7 +100,7 @@ module.exports = function(grunt) {
 				limit: 10
 			},
 			build: {
-				tasks: ['less:main', 'jade:main', 'jade:templates', 'copy:main', 'copy:lib']
+				tasks: ['less:main', 'jade:main', 'jade:templates', 'copy:main']
 			},
 			watch: {
 				tasks: ['watch:css', 'watch:html', 'watch:templates', 'watch:js']
@@ -127,7 +120,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-concurrent');
 
-	grunt.registerTask('test', 'jshint');
-	grunt.registerTask('default', ['clean:main', 'concurrent:build', 'concurrent:run']);
-	grunt.registerTask('cleanAll', 'clean:all');
+	grunt.registerTask('default', ['concurrent:build', 'concurrent:run']);
+	grunt.registerTask('cleanAll', ['clean:main']);
 }

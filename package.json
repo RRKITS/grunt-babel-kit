@@ -12,7 +12,7 @@
     "grunt-contrib-jade": "latest",
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-less": "latest",
-    "grunt-contrib-requirejs": "^0.4.4",
+    "grunt-contrib-requirejs": "latest",
     "grunt-contrib-watch": "latest"
   }
 }

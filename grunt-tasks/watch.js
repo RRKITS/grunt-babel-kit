@@ -14,5 +14,11 @@ module.exports = {
 	js: {
 		files: ['src/js/**/*.js'],
 		tasks: ['jshint:main','copy:main', 'requirejs']
+	},
+	livereload: {
+		files: ['app/**'],
+		options: {
+			livereload: true
+		}
 	}
 };

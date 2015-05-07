@@ -7,7 +7,7 @@ module.exports = {
 		tasks: ['less:main', 'jade:main', 'jade:templates', 'jshint:main', 'copy:main', 'requirejs']
 	},
 	watch: {
-		tasks: ['watch:css', 'watch:html', 'watch:templates', 'watch:js']
+		tasks: ['watch:css', 'watch:html', 'watch:templates', 'watch:js', 'watch:livereload']
 	},
 	run: {
 		tasks: ['concurrent:watch', 'connect:main']

@@ -6,8 +6,19 @@ require.config({
 		underscore: '../lib/underscore/underscore-min',
 		backbone: '../lib/backbone/backbone',
 		bootstrap: '../lib/bootstrap/dist/js/bootstrap.min',
+		templates: 'templates'
 	},
 	shim: {
+		underscore: {
+			exports: '_'
+		},
+		backbone: {
+			deps: [
+				'underscore',
+				'jquery'
+			],
+			exports: 'Backbone'
+		},
 		bootstrap: {
 			deps: ['jquery']
 		}

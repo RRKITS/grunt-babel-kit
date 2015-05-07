@@ -1,7 +1,7 @@
 {
-  "name": "web-challenge",
+  "name": "starter-kit",
   "version": "1.0.0",
-  "homepage": "https://github.com/Graphoper/ua-web-challenge-vii-semifinal.git",
+  "homepage": "https://github.com/Graphlich/gruntPackage.git",
   "authors": [],
   "license": "MIT",
   "private": true,
@@ -16,6 +16,7 @@
     "bootstrap": "~3.3.1",
     "backbone": "~1.1.2",
     "underscore": "~1.7.0",
+    "almond": "~0.3.1",
     "jade": "~1.8.1"
   },
   "resolutions": {

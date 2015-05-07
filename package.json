@@ -1,5 +1,5 @@
 {
-  "name": "grunt-project",
+  "name": "starter-kit",
   "version": "0.0.1",
   "author": "Skakun Maxim <skakun.maxim@gmail.com>",
   "devDependencies": {
@@ -7,11 +7,12 @@
     "grunt-cli": "latest",
     "grunt-concurrent": "latest",
     "grunt-contrib-clean": "latest",
-    "grunt-contrib-less": "latest",
     "grunt-contrib-connect": "latest",
     "grunt-contrib-copy": "latest",
     "grunt-contrib-jade": "latest",
     "grunt-contrib-jshint": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-requirejs": "^0.4.4",
     "grunt-contrib-watch": "latest"
   }
 }

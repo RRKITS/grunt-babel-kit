@@ -1,4 +1,5 @@
 define(['jquery'],
 	function($){
-		//TODO: write code here
+		//some code here
+		console.log('main');
 	});

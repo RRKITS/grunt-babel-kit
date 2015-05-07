@@ -3,112 +3,17 @@ var path = require('path');
 module.exports = function(grunt) {
 
 	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
 
-		connect: {
-			main: {
-				options: {
-					port: 1000,
-					keepalive: true,
-					base: 'app'
-				}
-			}
-		},
+		connect: require('./grunt-tasks/connect'),
+		jshint: require('./grunt-tasks/jshint'),
+		less: require('./grunt-tasks/less'),
+		jade: require('./grunt-tasks/jade'),
+		copy: require('./grunt-tasks/copy'),
+		watch: require('./grunt-tasks/watch'),
+		concurrent: require('./grunt-tasks/concurrent'),
+		clean: require('./grunt-tasks/clean'),
+		requirejs: require('./grunt-tasks/requirejs')
 
-		jshint: {
-			main: [
-				'Gruntfile.js',
-				'src/js/**/*.js'
-			]
-		},
-
-		clean: {
-			main: ['app']
-		},
-
-		less: {
-			main: {
-				options: {
-					paths: ['src/styles'],
-					compress: true
-				},
-				files: [
-					{
-						expand: true,
-						cwd: 'src/styles',
-						src: ['*.less'],
-						dest: 'app/css/',
-						ext: '.css'
-					}
-				]
-			}
-		},
-
-		jade: {
-			main: {
-				expand: true,
-				cwd: 'src/html',
-				src: ['**/*.jade'],
-				dest: 'app',
-				ext: '.html'
-			},
-			templates: {
-				files: {
-					'app/js/templates.js': 'src/templates/**/*.jade'
-				},
-				options: {
-					amd: true,
-					client: true,
-					processName: function (name) {
-						return path.basename(name, '.jade');
-					}
-				}
-			}
-		},
-
-		copy: {
-			main: {
-				expand: true,
-				cwd: 'src/js',
-				src: ['**/*.js'],
-				dest: 'app/js'
-			}
-		},
-
-		watch: {
-			css: {
-				files: ['src/styles/**/*.less'],
-				tasks: ['less:main']
-			},
-			html: {
-				files: ['src/html/**/*.jade'],
-				tasks: ['jade:main']
-			},
-			templates: {
-				files: ['src/templates/**/*.jade'],
-				tasks: ['jade:templates']
-			},
-			js: {
-				files: ['src/js/**/*.js'],
-				tasks: ['copy:main']
-			}
-		},
-
-		concurrent: {
-			options: {
-				logConcurrentOutput: true,
-				limit: 10
-			},
-			build: {
-				tasks: ['less:main', 'jade:main', 'jade:templates', 'copy:main']
-			},
-			watch: {
-				tasks: ['watch:css', 'watch:html', 'watch:templates', 'watch:js']
-			},
-			run: {
-				tasks: ['concurrent:watch', 'connect:main']
-			}
-		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-clean');
@@ -119,7 +24,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-concurrent');
+	grunt.loadNpmTasks('grunt-contrib-requirejs');
 
 	grunt.registerTask('default', ['concurrent:build', 'concurrent:run']);
 	grunt.registerTask('cleanAll', ['clean:main']);
-}
+};

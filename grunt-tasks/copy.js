@@ -4,5 +4,11 @@ module.exports = {
 		cwd: 'src/js',
 		src: ['**/*.js'],
 		dest: 'app/js'
+	},
+	fav: {
+		expand: true,
+		cwd: 'src',
+		src: ['favicon.ico'],
+		dest: 'app'
 	}
 };

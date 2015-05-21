@@ -8,12 +8,12 @@ module.exports = {
 		tasks: ['jade:main']
 	},
 	templates: {
-		files: ['src/templates/**/*.jade'],
-		tasks: ['jade:templates', 'requirejs']
+		files: ['src/js/tpl/**/*.jade'],
+		tasks: ['jade:templates'/*, 'requirejs'*/]
 	},
 	js: {
 		files: ['src/js/**/*.js'],
-		tasks: ['jshint:main','copy:main', 'requirejs']
+		tasks: ['jshint:main', 'copy:main'/*, 'requirejs'*/]
 	},
 	livereload: {
 		files: ['app/**'],

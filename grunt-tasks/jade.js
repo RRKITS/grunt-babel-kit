@@ -8,7 +8,7 @@ module.exports = {
 	},
 	templates: {
 		files: {
-			'app/js/templates.js': 'src/js/templates/**/*.jade'
+			'app/js/templates.js': 'src/js/tpl/**/*.jade'
 		},
 		options: {
 			amd: true,

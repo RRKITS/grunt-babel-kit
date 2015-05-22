@@ -13,7 +13,7 @@ module.exports = {
 	},
 	js: {
 		files: ['src/js/**/*.js'],
-		tasks: ['jshint:main', 'copy:main'/*, 'requirejs'*/]
+		tasks: ['jshint:main', 'babel:main'/*, 'requirejs'*/]
 	},
 	livereload: {
 		files: ['app/**'],
